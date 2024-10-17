@@ -1504,7 +1504,7 @@ void MVM_proc_pty_spawn(char *prog, char *argv[]) {
     }
 
     // Does not return.
-    execv(prog, argv);
+    execvp(prog, argv);
 
     fprintf(stderr, "Spawn helper failed to spawn process %s: %s (error code %i)\n",
             prog, strerror(errno), errno);
